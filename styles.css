@@ -1,0 +1,311 @@
+body{
+    margin: 0;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* MAIN GRID LAYOUT */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    }
+    
+    .sidebar { 
+        grid-row: 1 / span 2;
+        padding: 1rem; 
+        }
+
+    .header { 
+        grid-row: 2 span / span;
+        padding: 1rem; 
+        }
+    .content { 
+        grid-row: 2 / 2; 
+        padding: 1rem; 
+    }
+
+    /* SECTIONS GRID LAYOUT */
+
+    .sidebar{
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        padding: 1rem;
+        gap: 1rem;
+        z-index: 999;
+    }
+
+    .header{
+        display: grid;
+        grid-template: 1fr 1fr / 2fr 1fr;
+        align-items:center;
+        z-index: 998;
+        box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+  
+    }
+
+    /* SIDEBAR LAYOUT */
+
+    .title-container{
+        display: flex;
+
+        align-items: center;
+    }
+
+    .nav-list li, .settings-list li {
+        display:flex;
+        gap:1rem;
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar .title{
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+        align-items: center;
+    }
+
+    /* HEADER LAYOUT */
+
+    .user-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .user{
+        display:grid;
+        grid-template-columns: auto 2fr;
+        column-gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+    .user .username{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .user .profile-picture{
+        height: 48px;
+        width: 48px;
+    }
+    .user-bar #notification-bell{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+
+    .profile-picture{
+        align-self: center;
+        justify-self: center;
+    }
+
+    .user-greeting{
+        display: grid;
+        grid-template-columns: 5rem 20rem;
+        grid-template-rows: auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        align-items: end;
+        cursor: pointer;
+        width: fit-content;
+    }
+    .user-greet{
+        margin: 0%;
+  
+        }
+    .username-greet{
+        grid-area: 2/2;
+        margin: 0%;
+    }
+    .profile-picture-greet{
+        grid-row: span 2;
+        border-radius: 50%;
+    }
+
+    .user-buttons{
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+
+      /* CONTENT LAYOUT */
+
+      .content{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap:2rem;
+
+        }
+
+
+        .card-container{
+            grid-row: span 2;
+        }
+
+        .side-info, .users-info{
+            grid-row: span 1;
+        }
+        .cards{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .card-buttons{
+            display: flex; 
+            justify-content: end;
+        }
+
+     /* CONTENT STYLE */
+
+        .card{
+            grid-row: span 1;
+            border-radius: 10px;
+            background-color: #bae6fd;
+            overflow-wrap: break-word;
+            border-left: 8px solid #0369a1;
+            padding: 1rem;
+        }
+
+        .card-buttons button{
+            border: 0;
+            background-color: transparent;
+        }
+
+        .card-buttons button:hover{
+            filter: invert(100%);
+            transition: 0.3s;
+        }
+
+        .announcements, .trending{
+            display: grid;
+            gap: 1rem;
+            border-radius: 10px;
+            background-color: #bae6fd;
+            padding: 1rem;
+        }
+
+        .announcement:hover h4{
+            filter: invert(100%);
+            transition: 0.3s;
+        }
+
+        .announcements hr{
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1px 0;
+            padding: 0;
+            border-color: #0369a1;;
+
+        }
+
+        .announcements p, .announcements h4, .trending p, .trending h4{
+            margin: 0;
+        }
+    
+        .trending p{
+            grid-area: 2/2;
+            
+            color: #646464;
+        }
+        .trending .profile-picture{
+            grid-row: span 2;
+        }
+
+        .trending .user:hover h4{
+            filter: invert(100%);
+            transition: 0.3s;
+        }
+
+
+
+
+
+
+
+
+/* STYLE */
+
+.sidebar { background-color: #0ea5e9;}
+.header { background-color: #bae6fd;}
+.content { background-color: #eff6ff;}
+
+#search-bar{
+    background-image: url(svg/magnify.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    height: 50%;
+}
+
+
+svg{
+    width: 32px;
+    height: 32px;
+}
+
+.profile-picture{
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+ul{
+    padding-inline-start: 0;
+}
+
+
+.buttons{
+  background: #0ea5e9;
+  border-radius: 999px;
+  box-shadow: #0ea5e9 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 125px;
+  word-break: break-word;
+  border: 0;
+}
+.buttons:hover {
+    background-color:#0369a1;
+    transition: 0.3s;
+}
+
+li:hover{
+    filter: invert(100%);
+    transition: 0.3s;
+}
+
+#notification-bell:hover, #star:hover {
+    filter:invert(80%) sepia(50%) saturate(2476%);
+    transition: 0.3s;
+}
+
+
+
+
